@@ -1,0 +1,19 @@
+# Godot 4.2+ temporary extension libraries on Windows
+~*.dll
+
+# Godot caches and generated files
+.godot/
+.nomedia
+.import/
+export.cfg
+export_credentials.cfg
+*.tmp
+*.translation
+
+# Generated export projects
+/android/
+
+# Mono/C# generated files
+.mono/
+data_*/
+mono_crash.*.json
