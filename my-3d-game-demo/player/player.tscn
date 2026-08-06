@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bjvh05kpaptry"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wp5od"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_wp5od"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wp5od"]
+size = Vector3(0.1, 0.1, 1)
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1213587545]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=408430107]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_wp5od")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1177232767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4052117, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1620884050]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_wp5od")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1907035599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3423896, -0.7546308)
+visible = false
+mesh = SubResource("BoxMesh_wp5od")
