@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bjvh05kpaptry"]
 
 [ext_resource type="PackedScene" uid="uid://bmfbfoe4bi70j" path="res://player/simple_gun/gun_model.glb" id="1_oul6g"]
+[ext_resource type="Script" uid="uid://c6xv3anxvikvh" path="res://player/player.gd" id="1_rkbax"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wp5od"]
 
@@ -9,7 +10,8 @@
 [sub_resource type="BoxMesh" id="BoxMesh_wp5od"]
 size = Vector3(0.1, 0.1, 1)
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1213587545]
+[node name="Player" type="CharacterBody3D" unique_id=1213587545]
+script = ExtResource("1_rkbax")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=408430107]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
