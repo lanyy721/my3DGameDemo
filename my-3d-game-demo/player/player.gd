@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -8,3 +10,5 @@ func _unhandled_input(event: InputEvent) -> void:
 		%Camera3D.rotation_degrees.x=clamp(
 			%Camera3D.rotation_degrees.x,-60.0,60.0
 		)
+	elif event.is_action_pressed("ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
