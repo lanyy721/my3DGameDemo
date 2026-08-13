@@ -28,6 +28,12 @@ func _physics_process(delta: float) -> void:
 	velocity.x=direcation.x*SPEED
 	velocity.z=direcation.z*SPEED
 	
+	velocity.y-=20.0*delta
+	
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y=10.0
+	elif Input.is_action_just_released("jump") and velocity.y>0.0:
+		velocity.y=0.0
 	
 	move_and_slide()
 	
