@@ -27,6 +27,7 @@ transform = Transform3D(-0.51836234, 1.4404384e-17, 0.025159413, 0.0029405232, 0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1620884050]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_wp5od")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1907035599]
