@@ -87,4 +87,4 @@ size = Vector3(5, 1, 8.039401)
 material = ExtResource("3_feb5d")
 
 [node name="Mob" parent="." unique_id=440980193 instance=ExtResource("4_fc0e3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.292963, 2.1558118, -17.138897)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.292963, 0.72176695, -17.138897)
