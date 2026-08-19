@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bjvh05kpaptry" path="res://player/player.tscn" id="1_80nbo"]
 [ext_resource type="Texture2D" uid="uid://btqf85qmhbqog" path="res://level/checkboard.png" id="1_e2o6t"]
 [ext_resource type="Material" uid="uid://oa3j5pr5skmk" path="res://level/bridge.tres" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://rf8rc4s2cdj5" path="res://mob/mob.tscn" id="4_fc0e3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_80nbo"]
 albedo_color = Color(0.17254902, 0.6, 0.36078432, 1)
@@ -84,3 +85,6 @@ transform = Transform3D(0.66324943, 0, 0, 0, 1, 0, 0, 0, 1.6151031, -28.00665, -
 use_collision = true
 size = Vector3(5, 1, 8.039401)
 material = ExtResource("3_feb5d")
+
+[node name="Mob" parent="." unique_id=440980193 instance=ExtResource("4_fc0e3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.292963, 2.1558118, -17.138897)
