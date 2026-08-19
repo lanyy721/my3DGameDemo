@@ -12,7 +12,7 @@ tracks/0/path = NodePath("Armature/Skeleton3D/bat:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.10002215, 0.2000443),
+"times": PackedFloat32Array(0, 0.10002215, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(1, 1, 1), Vector3(1.3, 1.3, 1.3), Vector3(1, 1, 1)]
@@ -24,10 +24,10 @@ tracks/1/path = NodePath("Armature/Skeleton3D/bat:surface_material_override/0:al
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.10002215, 0.2, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.10002215, 0.19999999),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 0, 0.08235294, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0.08235294, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_030dj"]
@@ -45,8 +45,8 @@ animation = &"Idle"
 mix_mode = 1
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_wp5od"]
-graph_offset = Vector2(-135.61412, 11.784749)
-nodes/output/position = Vector2(653.3333, 200)
+graph_offset = Vector2(-222.5385, -26.869394)
+nodes/output/position = Vector2(760, 173.33333)
 nodes/Idle/node = SubResource("AnimationNodeAnimation_030dj")
 nodes/Idle/position = Vector2(-53.333332, 133.33333)
 nodes/Hurt/node = SubResource("AnimationNodeAnimation_vgr6s")
