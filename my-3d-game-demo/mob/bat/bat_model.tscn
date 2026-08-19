@@ -58,19 +58,19 @@ node_connections = [&"output", 0, &"OneShot", &"OneShot", 0, &"Idle", &"OneShot"
 [node name="bat_model" unique_id=895760151 instance=ExtResource("1_1he7g")]
 
 [node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(2024359401) index="0" unique_id=1664954523]
-bones/0/position = Vector3(0, 0.004118851, 0)
-bones/1/rotation = Quaternion(0.17531873, 0.011286445, -0.59153485, 0.7869069)
-bones/2/rotation = Quaternion(0.029664146, 0.013145544, 0.39698893, 0.9172498)
-bones/3/rotation = Quaternion(-0.09107338, 0.020089328, 0.30894744, 0.9464955)
-bones/4/rotation = Quaternion(0.17531873, -0.011286445, 0.59153485, 0.7869069)
-bones/5/rotation = Quaternion(0.029664146, -0.013145544, -0.39698893, 0.9172498)
-bones/6/rotation = Quaternion(-0.09107338, -0.020089328, -0.30894744, 0.9464955)
+bones/0/position = Vector3(0, -0.017862331, 0)
+bones/1/rotation = Quaternion(-0.05746226, 0.21311884, -0.67017573, 0.70862055)
+bones/2/rotation = Quaternion(-0.13547255, -0.036343552, 0.25688618, 0.9562092)
+bones/3/rotation = Quaternion(-0.053576775, 0.035240192, 0.23399033, 0.97012174)
+bones/4/rotation = Quaternion(-0.05746226, -0.21311884, 0.67017573, 0.70862055)
+bones/5/rotation = Quaternion(-0.13547255, 0.036343552, -0.25688618, 0.9562092)
+bones/6/rotation = Quaternion(-0.053576775, -0.035240192, -0.23399033, 0.97012174)
 bones/7/position = Vector3(0.1309921, -0.22739176, -0.087851465)
 bones/7/rotation = Quaternion(0.26196837, 0.08345512, 0.26575127, 0.9240044)
-bones/8/rotation = Quaternion(3.1557942e-08, 0.5501713, 0.8350519, 2.0588617e-08)
+bones/8/rotation = Quaternion(3.8563645e-08, 0.6585347, 0.7525505, 2.376953e-08)
 bones/10/position = Vector3(-0.1309921, -0.22739176, -0.087851465)
 bones/10/rotation = Quaternion(0.26196837, -0.083455116, -0.26575127, 0.9240044)
-bones/11/rotation = Quaternion(2.4066898e-08, 0.5501713, 0.8350519, 3.9245197e-08)
+bones/11/rotation = Quaternion(2.3665685e-08, 0.6585348, 0.75255036, 3.7716504e-08)
 
 [node name="bat" parent="Armature/Skeleton3D" index="0" unique_id=1637490114]
 surface_material_override/0 = ExtResource("2_030dj")
