@@ -6,6 +6,8 @@
 [ext_resource type="Material" uid="uid://oa3j5pr5skmk" path="res://level/bridge.tres" id="3_feb5d"]
 [ext_resource type="PackedScene" uid="uid://cmlts63v8sgc3" path="res://mob/spawner/mob_spawner_3d.tscn" id="4_fc0e3"]
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_wp5od"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_80nbo"]
 albedo_color = Color(0.17254902, 0.6, 0.36078432, 1)
 albedo_texture = ExtResource("1_e2o6t")
@@ -27,6 +29,14 @@ font_size = 80
 
 [node name="Game" type="Node3D" unique_id=1040004307]
 script = ExtResource("1_7jktm")
+
+[node name="KillPlane" type="Area3D" parent="." unique_id=2146354305]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.071493)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KillPlane" unique_id=1475483606]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.6708527, 0)
+shape = SubResource("WorldBoundaryShape3D_wp5od")
+debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="MobSpawner3D" parent="." unique_id=1087165642 instance=ExtResource("4_fc0e3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5462403, -21.143969)
@@ -103,4 +113,5 @@ offset_bottom = 139.0
 text = "Score:0"
 label_settings = SubResource("LabelSettings_wp5od")
 
+[connection signal="body_entered" from="KillPlane" to="." method="_on_kill_plane_body_entered"]
 [connection signal="mob_spwen" from="MobSpawner3D" to="." method="_on_mob_spawner_3d_mob_spwen"]
