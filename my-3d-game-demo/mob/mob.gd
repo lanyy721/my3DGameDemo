@@ -37,10 +37,10 @@ func take_damage():
 		apply_central_impulse(direction*10.0+random_upward_force)
 		timer.start()
 		lock_rotation=false
-		died.emit()
 		ko_sound.play()
 		
 
 
 func _on_timer_timeout() -> void:
 	queue_free()
+	died.emit()

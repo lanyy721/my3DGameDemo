@@ -4,11 +4,41 @@
 [ext_resource type="PackedScene" uid="uid://mpqiad8ormmk" path="res://mob/bat/bat_model.tscn" id="1_7b8ug"]
 [ext_resource type="AudioStream" uid="uid://cinjyxgib82ig" path="res://mob/mob_take_damage.wav" id="3_pirjb"]
 [ext_resource type="AudioStream" uid="uid://lmnfme0dtbuv" path="res://mob/mob_ko.wav" id="4_mixeo"]
+[ext_resource type="PackedScene" uid="uid://cjk3frr43yesb" path="res://mob/smoke_puff/smoke_puff.tscn" id="5_ub8vd"]
+[ext_resource type="Shader" uid="uid://spi71y1qu06o" path="res://mob/smoke_puff/material/outer_smoke.gdshader" id="6_4wq73"]
+[ext_resource type="Shader" uid="uid://0h8qjtcpk0mk" path="res://mob/smoke_puff/material/inner_smoke.gdshader" id="7_8bmme"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wp5od"]
 radius = 0.35348582
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ebo4t"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_4wq73")
+shader_parameter/albedo = Color(0.937255, 0.698039, 1, 1)
+shader_parameter/progress = 1.8
+shader_parameter/smoothness = 0.1
+shader_parameter/ease = 3.0
+shader_parameter/base_scale = 1.2
+shader_parameter/deformation_scale = 1.5
+shader_parameter/texture_offset = -0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ycc6u"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("7_8bmme")
+shader_parameter/albedo = Color(1, 0.537255, 0.792157, 1)
+shader_parameter/progress = 0.0
+shader_parameter/smoothness = 0.01
+shader_parameter/ease = 2.0
+shader_parameter/base_scale = 1.1
+shader_parameter/deformation_scale = 1.0
+shader_parameter/texture_offset = 0.1
+shader_parameter/fresnel_offset = 0.5
+shader_parameter/global_alpha = 0.0
+
 [node name="Mob" type="RigidBody3D" unique_id=440980193]
+collision_layer = 2
 gravity_scale = 0.0
 lock_rotation = true
 script = ExtResource("1_6jlfs")
@@ -21,7 +51,7 @@ shape = SubResource("SphereShape3D_wp5od")
 
 [node name="Timer" type="Timer" parent="." unique_id=1297254223]
 unique_name_in_owner = true
-wait_time = 2.0
+wait_time = 3.0
 one_shot = true
 
 [node name="HurtSound" type="AudioStreamPlayer3D" parent="." unique_id=1870871547]
@@ -32,4 +62,14 @@ stream = ExtResource("3_pirjb")
 unique_name_in_owner = true
 stream = ExtResource("4_mixeo")
 
+[node name="smoke_puff" parent="." unique_id=825498846 instance=ExtResource("5_ub8vd")]
+
+[node name="OuterSmoke" parent="smoke_puff" index="0" unique_id=1348578092]
+material_override = SubResource("ShaderMaterial_ebo4t")
+
+[node name="InnerSmoke" parent="smoke_puff" index="1" unique_id=1471773779]
+material_override = SubResource("ShaderMaterial_ycc6u")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="smoke_puff"]
