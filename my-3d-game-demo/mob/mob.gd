@@ -6,6 +6,10 @@ var health=3
 var speed=randf_range(2.0,4.0)
 @onready var timer: Timer = %Timer
 
+@onready var hurt_sound: AudioStreamPlayer3D = %HurtSound
+@onready var ko_sound: AudioStreamPlayer3D = %KoSound
+
+
 @onready var bat_model: Node3D = %bat_model
 @onready var player=get_node("/root/Game/Player")
 
@@ -23,6 +27,7 @@ func take_damage():
 	bat_model.hurt()
 	
 	health-=1
+	hurt_sound.play()
 	
 	if health==0:
 		set_physics_process(false)
@@ -33,6 +38,7 @@ func take_damage():
 		timer.start()
 		lock_rotation=false
 		died.emit()
+		ko_sound.play()
 		
 
 
