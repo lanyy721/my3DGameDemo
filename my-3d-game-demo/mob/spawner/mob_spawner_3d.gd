@@ -1,4 +1,7 @@
 extends Node3D
+
+signal mob_spwen(mob)
+
 @export var mob_to_spawn:PackedScene = null
 
 @onready var marker_3d: Marker3D = %Marker3D
@@ -10,3 +13,4 @@ func _on_timer_timeout() -> void:
 	add_child(new_mob)
 	new_mob.global_position=marker_3d.global_position
 	
+	mob_spwen.emit(new_mob)

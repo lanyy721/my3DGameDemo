@@ -1,5 +1,7 @@
 extends RigidBody3D
 
+signal died
+
 var health=3
 var speed=randf_range(2.0,4.0)
 @onready var timer: Timer = %Timer
@@ -30,6 +32,7 @@ func take_damage():
 		apply_central_impulse(direction*10.0+random_upward_force)
 		timer.start()
 		lock_rotation=false
+		died.emit()
 		
 
 
